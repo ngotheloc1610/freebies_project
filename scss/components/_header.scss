@@ -1,0 +1,116 @@
+.header {
+  padding-top: 50px;
+  padding-bottom: 88px;
+
+  @include tablet {
+    padding: 25px 0 50px;
+  }
+
+  &__container {
+    @include flex(center, space-between);
+  }
+
+  &__menu {
+    @include flex(center, center);
+    gap: 40px;
+
+    &__item__auth {
+      display: none;
+
+      @include mobile {
+        display: block;
+        padding: 20px;
+        @include flex(flex-start, flex-start);
+      }
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: block;
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $white-color;
+      width: 300px;
+      z-index: 99;
+      border-left: 1px solid $secondary-color;
+      @include flex(flex-start, flex-start);
+      flex-direction: column;
+      gap: 10px 0;
+      padding-top: 90px;
+      align-items: stretch;
+      transform: translateX(100%);
+      will-change: transform;
+      transition: all 0.2s ease;
+
+      &.is-show {
+        transform: translateX(0);
+      }
+
+      &__item__link {
+        display: block;
+        width: 100%;
+        padding: 20px;
+      }
+    }
+  }
+
+  &__btns {
+    @include flex(center, flex-end);
+    gap: 30px;
+
+    a:first-child {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: calc(19 / 16);
+      color: $black-color;
+    }
+
+    @include mobile {
+      display: none;
+      .btn-small {
+        padding: 13px 24px;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    @include mobile {
+      display: inline-block;
+      font-size: 25px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .header__menu__item__link {
+    position: relative;
+    transition: all 0.2s ease;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: auto;
+      right: 0;
+      width: 0;
+      height: 3px;
+      background-color: $primary-color;
+      transition: all 0.2s ease;
+    }
+
+    &:hover {
+      color: $primary-color;
+      &::after {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}

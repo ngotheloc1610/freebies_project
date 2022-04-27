@@ -1,0 +1,164 @@
+.about {
+  margin-bottom: 96px;
+
+  @include tablet {
+    margin-bottom: 70px;
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    @include flex(center, space-between);
+    gap: 41px;
+    margin-bottom: 103px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 80px;
+    }
+
+    &__left {
+      max-width: 555px;
+      width: 100%;
+
+      h1 {
+        font-size: 50px;
+        line-height: calc(70 / 50);
+        margin-bottom: 20px;
+        font-weight: 500;
+
+        @include tablet {
+          font-size: 35px;
+          line-height: calc(70 / 35);
+          margin-bottom: 20px;
+        }
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      p {
+        margin-bottom: 50px;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      a {
+        position: relative;
+      }
+      a:before {
+        content: "";
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 211.83px;
+        height: 60px;
+        top: 100%;
+        left: 50%;
+
+        background: rgba(245, 56, 56, 0.35);
+        filter: blur(54px);
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__desc {
+    position: relative;
+    padding: 37px 0;
+    @include flex(center, space-between);
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 25%;
+      left: 3.5%;
+      right: 3.5%;
+      max-width: 1068.84px;
+      width: 100%;
+      margin: 0 auto;
+      height: 189.22px;
+      background: #0d1025;
+      opacity: 0.06;
+      filter: blur(114px);
+      border-radius: 10px;
+    }
+
+    &__item {
+      border-right: 2px solid #eeeff2;
+      @include flex(center, center);
+      gap: 36.5px;
+      height: 125px;
+
+      @include mobile {
+        @include flex(flex-start, flex-start);
+        border: none;
+      }
+
+      &__left {
+        background: #ffecec;
+        border-radius: 70px;
+        width: 55px;
+        height: 55px;
+        @include flex(center, center);
+
+        i {
+          color: $primary-color;
+        }
+      }
+
+      &__right {
+        p:first-child {
+          margin-bottom: 5px;
+          font-weight: 700;
+          font-size: 25px;
+          line-height: calc(30 / 25);
+          color: $black-color;
+        }
+        p:last-child {
+          font-weight: 400;
+          font-size: 20px;
+          line-height: calc(30 / 20);
+
+          color: $secondary-color;
+        }
+      }
+    }
+    &__item:nth-child(1) {
+      max-width: 365.5px;
+      width: 100%;
+
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+
+    &__item:nth-child(2) {
+      max-width: 430px;
+      width: 100%;
+
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+
+    &__item:nth-child(3) {
+      max-width: 344.5px;
+      width: 100%;
+      border-right: none;
+
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+  }
+}

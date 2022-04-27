@@ -1,0 +1,49 @@
+.features {
+  margin-bottom: 130px;
+
+  @include tablet {
+    margin-bottom: 100px;
+  }
+
+  @include mobile {
+    margin-bottom: 70px;
+  }
+
+  &__container {
+    @include flex(center, space-between);
+    gap: 170px;
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      flex-direction: column-reverse;
+      gap: 50px;
+    }
+
+    &__right {
+      max-width: 430px;
+      width: 100%;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      &__content {
+        @include flex(flex-start, space-between);
+        flex-direction: column;
+        gap: 20px;
+
+        &__item {
+          @include flex(center, center);
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
